@@ -1,0 +1,170 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main role="main">
+
+        <section class="jumbotron text-center">
+            <div class="container">
+                <h1 class="jumbotron-heading"><img src="/assets/logo.png" alt=""></h1>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <h2 class="text-white">Filme</h2>
+
+            {% for event in pastEvents %}
+                <div class="row rounded py-3 border movie-card {% if (date(event.date) < date('now')) %}bg-archive{% endif %}">
+                    <div class="col-3">
+                        <div>
+                            <div class="img-wrapper">
+                                <img src="{{ event.movie.posterImage|tmdb_image_url('original', null, 400)|raw }}" class="img-fluid rounded" alt="">
+                                {% if event.videoKey %}
+                                <div class="img-overlay">
+                                    <button type="button" class="btn btn-lg btn-light" data-toggle="modal" data-video-key="{{ event.videoKey }}" data-video-title="{{ event.movie.title }}" data-target="#videoModal"><i class="fas fa-play"></i></button>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <h3>{{ event.movie.title }}</h3>
+                        <blockquote class="blockquote">
+                            <p>{{ event.movie.tagline }}</p>
+                        </blockquote>
+                        <p><i>{{ event.movie.overview | truncate(300) }}</i></p>
+                        <dl class="row">
+
+                            <dt class="col-sm-4">Genre</dt>
+                            <dd class="col-sm-8">
+                                {% for genre in event.movie.genres %}
+                                    {{ genre.name }}{% if loop.last %}{% else %},{% endif %}
+                                {% endfor %}
+                            </dd>
+
+                            <dt class="col-sm-4">Originaltitel</dt>
+                            <dd class="col-sm-8">{{ event.movie.originalTitle }}</dd>
+
+                            <dt class="col-sm-4">Produktionsland</dt>
+                            <dd class="col-sm-8">
+                                {% for productionCountrie in event.movie.productionCountries %}
+                                    {{ productionCountrie.name }}{% if loop.last %}{% else %},{% endif %}
+                                {% endfor %}
+                            </dd>
+
+                            <dt class="col-sm-4">Spielzeit</dt>
+                            <dd class="col-sm-8">{{ event.movie.runtime }} Min.</dd>
+
+                            <dt class="col-sm-4">FSK</dt>
+                            <dd class="col-sm-8">{{ event.certification }} Jahre</dd>
+
+                            <dt class="col-sm-4">Kategorie</dt>
+                            <dd class="col-sm-8"><i class="fas {% if event.category == 'documentation' %}fa-book{% else %}fa-film{% endif %}"></i></dd>
+
+                        </dl>
+                    </div>
+                    <div class="col-3">
+                        <h3 class="text-right">
+                            {% if event.special %}
+                                <span class="badge badge-primary"><i class="fas fa-certificate"></i> {{ event.date | date('D d.m.Y', false) }}</span><br>
+                                <span class="badge badge-primary"><i class="fas fa-certificate"></i> {{ event.date | date('H:i', false) }}</span>
+                            {% else %}
+                                <span class="badge badge-secondary">{{ event.date | date('D d.m.Y', false) }}</span><br>
+                                <span class="badge badge-secondary">{{ event.date | date('H:i', false) }}</span>
+                            {% endif %}
+                        </h3>
+                    </div>
+                </div>
+            {% endfor %}
+
+        </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="videoModalTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .movie-card {
+            box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+            margin-bottom: 2em;
+            background: #4caf50;
+        }
+
+        .bg-archive {
+            background: #d4d4d4;
+        }
+
+        .bg-archive:first-line {
+            margin-top: 300px;
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .img-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+        .img-overlay:before {
+            content: ' ';
+            display: block;
+            height: 40%;
+        }
+
+        .jumbotron {
+            border-radius: 0;
+            background-color: #000;
+        }
+
+        body {
+            background: #000;
+        }
+
+    </style>
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $('#videoModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var videoKey = button.data('video-key');
+            var videoTitle = button.data('video-title');
+            var modal = $(this);
+            modal.find('iframe').attr('src', 'https://www.youtube.com/embed/' + videoKey + "?autoplay=1");
+            modal.find('#videoModalTitle').text(videoTitle);
+        });
+        $('#videoModal').on('hidden.bs.modal', function (event) {
+            var modal = $(this);
+            modal.find('iframe').removeAttr('src');
+        });
+        $('.bg-archive:first').before('<h2 class="text-white">Archiv</h2>');
+    </script>
+{% endblock %}
