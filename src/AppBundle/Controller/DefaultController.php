@@ -24,12 +24,25 @@ class DefaultController extends Controller
     {
         /** @var MyMovie $movie */
         $movie = $this->get('my_movie.service');
-        $event['movie'] = $movie->getMovie($eventId['id']);
-        $event['date'] = $date;
-        $event['special'] = $eventId['special'];
-        $event['category'] = $eventId['category'];
-        $event['certification'] = $movie->getCertification($eventId['id']);
-        $event['videoKey'] = $movie->getVideoKey($eventId['id']);
+
+        if($eventId['id'] > 0) {
+            $event['movie'] = $movie->getMovie($eventId['id']);
+            $event['date'] = $date;
+            $event['special'] = $eventId['special'];
+            $event['category'] = $eventId['category'];
+            $event['certification'] = $movie->getCertification($eventId['id']);
+            $event['videoKey'] = $movie->getVideoKey($eventId['id']);
+        } else {
+            $event['movie'] = '';
+            $event['custom']['title'] = $eventId['custom']['title'];
+            $event['custom']['image'] = $eventId['custom']['image'];
+            $event['custom']['tagline'] = $eventId['custom']['tagline'];
+            $event['date'] = $date;
+            $event['special'] = $eventId['special'];
+            $event['category'] = $eventId['category'];
+            $event['certification'] = '';
+            $event['videoKey'] = '';
+        }
 
         return $event;
     }

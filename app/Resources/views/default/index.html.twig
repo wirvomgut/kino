@@ -33,7 +33,11 @@
                     <div class="col-lg-4 col-6">
                         <div>
                             <div class="img-wrapper">
+                                {% if event.movie %}
                                 <img src="{{ event.movie.posterImage|tmdb_image_url('original', null, 400)|raw }}" class="img-fluid rounded" alt="">
+                                {% else %}
+                                <img src="/assets/movies/{{ event.custom.image }}" class="img-fluid rounded" alt="">
+                                {% endif %}
                                 {% if event.videoKey %}
                                 <div class="img-overlay">
                                     <button type="button" class="btn btn-lg btn-light" data-toggle="modal" data-video-key="{{ event.videoKey }}" data-video-title="{{ event.movie.title }}" data-target="#videoModal"><i class="fas fa-play"></i></button>
@@ -53,41 +57,48 @@
                             {% endif %}
                         </h3>
 
-                        <h2>{{ event.movie.title }} <small>({{ event.movie.releaseDate | date('Y', false)  }})</small></h2>
-                        <h5>Handlung</h5>
-                        <blockquote class="blockquote">
-                            <p>{{ event.movie.tagline }}</p>
-                        </blockquote>
-                        <p><i>{{ event.movie.overview | truncate(300) }}</i></p>
-                        <dl class="row">
+                        {% if event.movie %}
+                            <h2>{{ event.movie.title }} <small>({{ event.movie.releaseDate | date('Y', false)  }})</small></h2>
+                            <h5>Handlung</h5>
+                            <blockquote class="blockquote">
+                                <p>{{ event.movie.tagline }}</p>
+                            </blockquote>
+                            <p><i>{{ event.movie.overview | truncate(300) }}</i></p>
+                            <dl class="row">
 
-                            <dt class="col-lg-4">Genre</dt>
-                            <dd class="col-lg-8">
-                                {% for genre in event.movie.genres %}
-                                    {{ genre.name }}{% if loop.last %}{% else %},{% endif %}
-                                {% endfor %}
-                            </dd>
+                                <dt class="col-lg-4">Genre</dt>
+                                <dd class="col-lg-8">
+                                    {% for genre in event.movie.genres %}
+                                        {{ genre.name }}{% if loop.last %}{% else %},{% endif %}
+                                    {% endfor %}
+                                </dd>
 
-                            <dt class="col-lg-4">Originaltitel</dt>
-                            <dd class="col-lg-8">{{ event.movie.originalTitle }}</dd>
+                                <dt class="col-lg-4">Originaltitel</dt>
+                                <dd class="col-lg-8">{{ event.movie.originalTitle }}</dd>
 
-                            <dt class="col-lg-4">Produktionsland</dt>
-                            <dd class="col-lg-8">
-                                {% for productionCountrie in event.movie.productionCountries %}
-                                    {{ productionCountrie.name }}{% if loop.last %}{% else %},{% endif %}
-                                {% endfor %}
-                            </dd>
+                                <dt class="col-lg-4">Produktionsland</dt>
+                                <dd class="col-lg-8">
+                                    {% for productionCountrie in event.movie.productionCountries %}
+                                        {{ productionCountrie.name }}{% if loop.last %}{% else %},{% endif %}
+                                    {% endfor %}
+                                </dd>
 
-                            <dt class="col-lg-4">Spielzeit</dt>
-                            <dd class="col-lg-8">{{ event.movie.runtime }} Min.</dd>
+                                <dt class="col-lg-4">Spielzeit</dt>
+                                <dd class="col-lg-8">{{ event.movie.runtime }} Min.</dd>
 
-                            <dt class="col-lg-4">FSK</dt>
-                            <dd class="col-lg-8">{{ event.certification }} Jahre</dd>
+                                <dt class="col-lg-4">FSK</dt>
+                                <dd class="col-lg-8">{{ event.certification }} Jahre</dd>
 
-                            <dt class="col-lg-4">Kategorie</dt>
-                            <dd class="col-lg-8"><i class="fas {% if event.category == 'documentation' %}fa-book{% else %}fa-film{% endif %}"></i></dd>
-
-                        </dl>
+                                <dt class="col-lg-4">Kategorie</dt>
+                                <dd class="col-lg-8"><i class="fas {% if event.category == 'documentation' %}fa-book{% else %}fa-film{% endif %}"></i></dd>
+                            </dl>
+                        {% else %}
+                            <h2>{{ event.custom.title }}</h2>
+                            <h5>Handlung</h5>
+                            <blockquote class="blockquote">
+                                <p>{{ event.custom.tagline }}</p>
+                            </blockquote>
+                        {% endif %}
                     </div>
                 </div>
             {% endfor %}

@@ -129,24 +129,24 @@
     category: 'movie'
 
 '2017-10-04 20:15':
-     id: 582
-     special:
-     category: 'movie'
+    id: 582
+    special:
+    category: 'movie'
 
 '2017-10-11 20:15':
-     id: 33605
-     special:
-     category: 'documentation'
+    id: 33605
+    special:
+    category: 'documentation'
 
 '2017-10-18 20:15':
-     id: 1023
-     special:
-     category: 'movie'
+    id: 1023
+    special:
+    category: 'movie'
 
 '2017-11-01 20:15':
-     id: 278
-     special:
-     category: 'movie'
+    id: 278
+    special:
+    category: 'movie'
 
 '2017-11-15 20:15':
     id: 401441
@@ -193,6 +193,15 @@
     special:
     category: 'movie'
 
+'2018-01-31 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'Kabarett-Mittwoch'
+        image: 'dummy.png'
+        tagline: 'Diesen Mittwoch gibt es wieder eine Attacke auf unsere Lachmuskeln. Denn dieser Mittwoch ist Kabarett-Mittwoch!'
+
 '2018-02-07 20:15':
     id: 27936
     special:
@@ -233,7 +242,3 @@
     special:
     category: 'documentation'
 
-'2018-05-02 20:15':
-   id: 234200
-   special:
-   category: 'movie'
