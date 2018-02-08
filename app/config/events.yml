@@ -200,7 +200,8 @@
     custom:
         title: 'Kabarett-Mittwoch'
         image: 'dummy.png'
-        tagline: 'Diesen Mittwoch gibt es wieder eine Attacke auf unsere Lachmuskeln. Denn dieser Mittwoch ist Kabarett-Mittwoch!'
+        tagline: ''
+        overview: 'Diesen Mittwoch gibt es wieder eine Attacke auf unsere Lachmuskeln. Denn dieser Mittwoch ist Kabarett-Mittwoch!'
 
 '2018-02-07 20:15':
     id: 27936
