@@ -5,17 +5,31 @@
 
         <section class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading"><img src="/assets/logo.png" alt=""></h1>
+                <a href="{{ url('homepage') }}"><h1 class="jumbotron-heading"><img src="/assets/logo.png" alt=""></h1></a>
             </div>
         </section>
 
+
+        <nav class="navbar navbar-expand-lg navbar-dark rounded">
+            <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('homepage') }}">Programm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('archive') }}">Archiv</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
         <div class="container">
 
-            <h2 class="text-white">Filme</h2>
+            <h2 class="text-white">{{ pageTitle }}</h2>
 
-            {% for event in pastEvents %}
+            {% for event in events %}
 
-                <div class="row rounded py-3 border movie-card {% if (date(event.date) < date('now')) %}bg-archive{% endif %}">
+                <div class="row rounded py-3 border movie-card">
                     <div class="col-lg-4 col-6">
                         <div>
                             <div class="img-wrapper">
@@ -166,6 +180,5 @@
             var modal = $(this);
             modal.find('iframe').removeAttr('src');
         });
-        $('.bg-archive:first').before('<h2 class="text-white">Archiv</h2>');
     </script>
 {% endblock %}
