@@ -218,20 +218,55 @@
     special:
     category: 'movie'
 
+'2018-02-28 20:15':
+    id: 504161
+    special:
+    category: 'documentation'
+
 '2018-03-07 20:15':
     id: 340
     special:
     category: 'movie'
+
+'2018-03-14 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
 
 '2018-03-21 20:15':
     id: 31175
     special:
     category: 'movie'
 
+'2018-03-28 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
+
 '2018-04-04 20:15':
     id: 1885
     special:
     category: 'movie'
+
+'2018-04-11 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
 
 '2018-04-18 20:15':
     id: 6007
@@ -243,3 +278,17 @@
     special:
     category: 'documentation'
 
+'2018-05-02 20:15':
+    id: 234200
+    special:
+    category: 'movie'
+
+'2018-05-09 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''

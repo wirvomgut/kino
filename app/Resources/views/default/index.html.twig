@@ -21,6 +21,13 @@
             {% for event in events %}
 
                 <div class="row rounded py-3 border movie-card">
+
+                    {% if event.category == 'documentation' %}
+                        <div class="ribbon"><span>Doku</span></div>
+                    {% else %}
+                        <div class="ribbon blue"><span>Film</span></div>
+                    {% endif %}
+
                     <div class="col-lg-4 col-6">
                         <div>
                             <div class="img-wrapper">
@@ -50,7 +57,6 @@
 
                         {% if event.movie %}
                             <h2>{{ event.movie.title }} <small>({{ event.movie.releaseDate | date('Y', false)  }})</small></h2>
-                            <h5>Handlung</h5>
                             <blockquote class="blockquote">
                                 <p>{{ event.movie.tagline }}</p>
                             </blockquote>
@@ -85,7 +91,6 @@
                             </dl>
                         {% else %}
                             <h2>{{ event.custom.title }}</h2>
-                            <h5>Handlung</h5>
                             <blockquote class="blockquote">
                                 <p>{{ event.custom.tagline }}</p>
                             </blockquote>
@@ -128,14 +133,7 @@
             box-shadow: 0 0px 4px rgba(0,0,0,0.1);
             margin-bottom: 2em;
             background: #d0eeee;
-        }
-
-        .bg-archive {
-            background: #d4d4d4;
-        }
-
-        .bg-archive:first-line {
-            margin-top: 300px;
+            position: relative;
         }
 
         .img-wrapper {
@@ -166,6 +164,59 @@
         body {
             background: #000;
         }
+
+
+        .ribbon {
+            position: absolute;
+            right: -5px; top: -5px;
+            z-index: 1;
+            overflow: hidden;
+            width: 75px;
+            height: 75px;
+            text-align: right;
+        }
+        .ribbon span {
+            font-size: 10px;
+            color: #fff;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold; line-height: 20px;
+            transform: rotate(45deg);
+            width: 100px; display: block;
+            background: #79A70A;
+            background: linear-gradient(#9BC90D 0%, #79A70A 100%);
+            box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+            position: absolute;
+            top: 19px; right: -21px;
+        }
+        .ribbon span::before {
+            content: '';
+            position: absolute;
+            left: 0px; top: 100%;
+            z-index: -1;
+            border-left: 3px solid #79A70A;
+            border-right: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #79A70A;
+        }
+        .ribbon span::after {
+            content: '';
+            position: absolute;
+            right: 0%; top: 100%;
+            z-index: -1;
+            border-right: 3px solid #79A70A;
+            border-left: 3px solid transparent;
+            border-bottom: 3px solid transparent;
+            border-top: 3px solid #79A70A;
+        }
+        .red span {background: linear-gradient(#F70505 0%, #8F0808 100%);}
+        .red span::before {border-left-color: #8F0808; border-top-color: #8F0808;}
+        .red span::after {border-right-color: #8F0808; border-top-color: #8F0808;}
+
+        .blue span {background: linear-gradient(#2989d8 0%, #1e5799 100%);}
+        .blue span::before {border-left-color: #1e5799; border-top-color: #1e5799;}
+        .blue span::after {border-right-color: #1e5799; border-top-color: #1e5799;}
+
 
     </style>
 {% endblock %}
