@@ -1,18 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <main role="main">
 
-        <section class="jumbotron text-center">
-            <div class="container">
-                <a href="{{ url('homepage') }}"><h1 class="jumbotron-heading"><img src="/assets/logo.png" alt=""></h1></a>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="/assets/logo.png" alt="" height="40"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item {% if app.request.attributes.get('_route') == 'homepage' %}active{% endif %}">
+                        <a class="nav-link" href="{{ url('homepage') }}">Programm</a>
+                    </li>
+                    <li class="nav-item {% if app.request.attributes.get('_route') == 'archive' %}active{% endif %}">
+                        <a class="nav-link" href="{{ url('archive') }}">Archiv</a>
+                    </li>
+                </ul>
             </div>
-        </section>
-
-        <div class="container text-center mb-5">
-            <a class="btn btn-secondary" href="{{ url('homepage') }}" role="button">Programm</a>
-            <a class="btn btn-secondary" href="{{ url('archive') }}" role="button">Archiv</a>
         </div>
+    </nav>
+
+    <main role="main">
 
         <div class="container">
 
@@ -28,7 +38,7 @@
                         <div class="ribbon blue"><span>Film</span></div>
                     {% endif %}
 
-                    <div class="col-lg-4 col-6">
+                    <div class="col-lg-4 col-6-12 mb-4 mb-lg-0">
                         <div>
                             <div class="img-wrapper">
                                 {% if event.movie %}
@@ -44,7 +54,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8 col-6">
+                    <div class="col-lg-8 col-12">
                         <h3>
                             {% if event.special %}
                                 <span class="badge badge-primary"><i class="fas fa-certificate"></i> {{ event.date | date('D d.m.Y', false) }}</span>
@@ -86,8 +96,6 @@
                                 <dt class="col-lg-4">FSK</dt>
                                 <dd class="col-lg-8">{{ event.certification }} Jahre</dd>
 
-                                <dt class="col-lg-4">Kategorie</dt>
-                                <dd class="col-lg-8"><i class="fas {% if event.category == 'documentation' %}fa-book{% else %}fa-film{% endif %}"></i></dd>
                             </dl>
                         {% else %}
                             <h2>{{ event.custom.title }}</h2>
@@ -156,13 +164,28 @@
             height: 40%;
         }
 
-        .jumbotron {
-            border-radius: 0;
-            background-color: #000;
+        /* Show it is fixed to the top */
+        body {
+            min-height: 75rem;
+            padding-top: 5.5rem;
+            background: #111;
+
         }
 
-        body {
-            background: #000;
+        /*
+         * Custom translucent site header
+         */
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 1);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            backdrop-filter: saturate(180%) blur(20px);
+        }
+        .navbar a {
+            transition: ease-in-out color .15s;
+        }
+        .navbar a:hover {
+            text-decoration: none;
         }
 
 
