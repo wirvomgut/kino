@@ -312,3 +312,18 @@
     id: 314365
     special:
     category: 'movie'
+
+'2018-06-06 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
+
+'2018-07-04 20:15':
+    id: 103773
+    special:
+    category: 'documentation'
