@@ -279,7 +279,7 @@
     category: 'movie'
 
 '2018-04-25 20:15':
-    id: 267379
+    id: 265297
     special:
     category: 'documentation'
 
@@ -289,17 +289,12 @@
     category: 'movie'
 
 '2018-05-09 20:15':
-    id: 0
+    id: 267379
     special:
     category: 'documentation'
-    custom:
-        title: 'tbd'
-        image: 'dummy.png'
-        tagline: ''
-        overview: ''
 
 '2018-05-16 20:15':
-    id: 11593
+    id: 10849
     special:
     category: 'movie'
 
