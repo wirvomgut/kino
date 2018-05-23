@@ -299,14 +299,9 @@
     category: 'movie'
 
 '2018-05-23 20:15':
-    id: 0
+    id: 347214
     special:
     category: 'documentation'
-    custom:
-        title: 'tbd'
-        image: 'dummy.png'
-        tagline: ''
-        overview: ''
 
 '2018-05-30 20:15':
     id: 314365
