@@ -304,7 +304,7 @@
     category: 'documentation'
 
 '2018-05-30 20:15':
-    id: 314365
+    id: 274415
     special:
     category: 'movie'
 
@@ -312,6 +312,31 @@
     id: 0
     special:
     category: 'documentation'
+    custom:
+        title: 'Qualityland'
+        image: 'qualityland.jpg'
+        tagline: ''
+        overview: ''
+
+'2018-06-13 20:15':
+    id: 1611
+    special:
+    category: 'movie'
+
+'2018-06-20 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
+
+'2018-06-27 20:15':
+    id: 0
+    special:
+    category: 'movie'
     custom:
         title: 'tbd'
         image: 'dummy.png'
@@ -322,3 +347,23 @@
     id: 103773
     special:
     category: 'documentation'
+
+'2018-07-11 20:15':
+    id: 0
+    special:
+    category: 'movie'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
+
+'2018-07-18 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
