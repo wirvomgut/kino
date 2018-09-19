@@ -367,3 +367,33 @@
         image: 'dummy.png'
         tagline: ''
         overview: ''
+
+'2018-09-01 20:15':
+    id: 120467
+    special: true
+    category: 'movie'
+
+'2018-09-05 20:15':
+    id: 134
+    special: true
+    category: 'movie'
+
+'2018-09-19 20:15':
+    id: 492
+    special:
+    category: 'movie'
+
+'2018-09-26 20:15':
+    id: 511736
+    special:
+    category: 'documentation'
+
+'2018-10-03 20:15':
+    id: 338
+    special:
+    category: 'movie'
+
+'2018-10-17 20:15':
+    id: 8265
+    special:
+    category: 'movie'
