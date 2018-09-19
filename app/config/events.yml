@@ -375,7 +375,7 @@
 
 '2018-09-05 20:15':
     id: 134
-    special: true
+    special:
     category: 'movie'
 
 '2018-09-19 20:15':
