@@ -20,6 +20,7 @@ class MyMovie
     /**
      * Constructor assigns service container to private container.
      * @param Container $container
+     * @throws \Exception
      */
     public function __construct(Container $container)
     {
