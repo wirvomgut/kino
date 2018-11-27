@@ -411,4 +411,64 @@
 '2018-11-14 20:15':
     id: 637
     special:
-    category: 'movie'    
+    category: 'movie'
+
+'2018-11-28 20:15':
+    id: 71
+    special:
+    category: 'movie'
+
+'2018-12-05 20:15':
+    id: 555912
+    special:
+    category: 'documentation'
+
+'2018-12-12 20:15':
+    id: 0
+    special:
+    category: 'movie'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
+
+'2018-12-19 20:15':
+    id: 484568
+    special:
+    category: 'documentation'
+
+'2018-12-26 20:15':
+    id: 0
+    special:
+    category: 'movie'
+    custom:
+        title: 'tbd'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
+
+'2019-01-02 20:15':
+    id: 453386
+    special:
+    category: 'documentation'
+
+'2019-01-09 20:15':
+    id: 487558
+    special:
+    category: 'movie'
+
+'2019-01-16 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'Zartbitter - Präventionstheater gegen sexuellen Missbrauch'
+        image: 'dummy.png'
+        tagline: 'Bei uns (doch) nicht!!'
+        overview: ''
+
+'2019-01-23 20:15':
+    id: 436167
+    special:
+    category: 'movie'
