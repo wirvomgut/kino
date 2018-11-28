@@ -420,7 +420,7 @@
 
 '2018-12-02 20:15':
     id: 12097
-    special:
+    special: true
     category: 'movie'
 
 '2018-12-05 20:15':
