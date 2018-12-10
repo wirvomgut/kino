@@ -38,6 +38,7 @@ class DefaultController extends Controller
             $event['custom']['image'] = $eventId['custom']['image'];
             $event['custom']['tagline'] = $eventId['custom']['tagline'];
             $event['custom']['overview'] = $eventId['custom']['overview'];
+            $event['custom']['link'] = $eventId['custom']['link'];
             $event['date'] = $date;
             $event['special'] = $eventId['special'];
             $event['category'] = $eventId['category'];

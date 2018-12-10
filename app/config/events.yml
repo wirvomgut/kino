@@ -464,11 +464,22 @@
     category: 'documentation'
     custom:
         title: 'Zartbitter - Präventionstheater gegen sexuellen Missbrauch'
-        image: 'dummy.png'
-        tagline: 'Bei uns (doch) nicht!!'
-        overview: ''
+        image: 'zartbitter.jpg'
+        tagline: 'Zartbitter-Präventionstheaterstück für Mütter, Väter und pädagogische Fachkräfte'
+        link: 'www.zartbitter.de/gegen_sexuellen_missbrauch/Praeventionstheater/203_bei_uns_doch_nicht.php'
 
 '2019-01-23 20:15':
     id: 436167
     special:
     category: 'movie'
+
+'2019-01-30 20:15':
+    id: 0
+    special:
+    category: 'documentation'
+    custom:
+        title: 'No more Boys and Girls'
+        image: 'gender.jpg'
+        tagline: 'Alles Gender, oder was?'
+        overview: 'In einem Sozialexperiment zeigt die Moderatorin Collien Ulmen-Fernandes, wie konservativ und klassisch selbst bei heute 7-Jährigen die Rollenbilder von Frau und Mann sind und woher das kommt.'
+        link: 'www.zdf.de/dokumentation/no-more-boys-and-girls/berufe-100.html'
