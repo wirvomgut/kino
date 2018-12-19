@@ -439,9 +439,13 @@
         overview: ''
 
 '2018-12-19 20:15':
-    id: 484568
+    id: 0
     special:
-    category: 'documentation'
+    custom:
+        title: 'Film fällt aus'
+        image: 'dummy.png'
+        tagline: ''
+        overview: ''
 
 '2018-12-26 20:15':
     id: 0
