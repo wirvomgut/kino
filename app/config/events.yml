@@ -441,8 +441,9 @@
 '2018-12-19 20:15':
     id: 0
     special:
+    category: 'documentation'
     custom:
-        title: 'Film fällt aus'
+        title: 'fällt aus'
         image: 'dummy.png'
         tagline: ''
         overview: ''
